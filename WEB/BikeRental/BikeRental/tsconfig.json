@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
-    "lib": ["es5"],
+    "lib": ["es7"],
     "sourceMap": true,
     "noImplicitAny": true
   },
