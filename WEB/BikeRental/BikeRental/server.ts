@@ -1,4 +1,5 @@
-﻿import express = require("express");
+﻿import { router } from "./routes";
+import * as express from "express";
 let app = express();
-app.use("/", require("./routes"));
+app.use("/", router);
 app.listen(process.env.port || 1337);
