@@ -1,6 +1,8 @@
-﻿import * as express from "express";
-import { Request, Response } from "express";
-import {json} from "body-parser";
+﻿import { Request, Response } from "express";
+import { json } from "body-parser";
+import { Bike } from "../../models/Bike"
+import * as express from "express";
+
 var router = express.Router();
 var data: Array<Bike> = require("./data");
 router.get("/",
@@ -18,4 +20,4 @@ router.post("/",
         data.push(toAdd);
         res.status(204);
     });
-export = router;
+export default router;

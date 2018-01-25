@@ -1,5 +1,5 @@
-﻿import { router } from "./routes";
-import * as express from "express";
+﻿import * as express from "express";
+import routes from "./routes";
 let app = express();
-app.use("/", router);
+app.use("/", routes);
 app.listen(process.env.port || 1337);

@@ -35,6 +35,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="models\Bike.ts" />
     <TypeScriptCompile Include="routes\bikes\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
