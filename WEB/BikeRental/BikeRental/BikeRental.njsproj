@@ -52,6 +52,7 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="models\" />
     <Folder Include="routes\" />
     <Folder Include="routes\bikes\" />
   </ItemGroup>
