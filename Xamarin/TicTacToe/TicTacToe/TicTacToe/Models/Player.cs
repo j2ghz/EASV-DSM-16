@@ -6,6 +6,6 @@ namespace TicTacToe.Models
 {
     public class Player
     {
-        public TYPE Type { get; set; }
+        public string Name { get; set; }
     }
 }
