@@ -6,7 +6,7 @@ namespace TicTacToe.Models
 {
     public class Board
     {
-        private readonly IReadOnlyList<IReadOnlyList<Cell>> board;
+        public readonly IReadOnlyList<IReadOnlyList<Cell>> board;
 
         public Board(byte count)
         {

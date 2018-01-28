@@ -15,7 +15,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
+        <Button Grid.Column="0" Grid.Row="0" Text="{Binding Board[0,0].Player.Sign}" Command="BoardClicked" CommandParameter="{Binding Board[0,0]}"/>
     </Grid>
     
 
