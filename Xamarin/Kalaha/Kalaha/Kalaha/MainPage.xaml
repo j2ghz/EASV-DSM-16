@@ -4,10 +4,23 @@
              xmlns:local="clr-namespace:Kalaha"
              x:Class="Kalaha.MainPage">
     <Grid>
-        <Grid.Columns>
+        <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            
-        </Grid.Columns>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        
     </Grid>
 
 </ContentPage>
