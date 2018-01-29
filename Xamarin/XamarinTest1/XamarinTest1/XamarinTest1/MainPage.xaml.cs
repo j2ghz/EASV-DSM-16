@@ -10,7 +10,7 @@ namespace XamarinTest1
 {
 	public partial class MainPage : ContentPage
 	{
-        private ObservableCollection<Student> Students { get; } = new ObservableCollection<Student>(){ new Student() { Grade = 2, Name = "Test" } , new Student() { Grade = 1, Name = "2" } , new Student() { Grade = 3, Name = "Test2" } };
+        private ObservableCollection<Student> Students { get; } = new ObservableCollection<Student>(){ new Student() { Grade = 2, Name = "Test" }, new Student() { Grade = 2, Name = "Test" }, new Student() { Grade = 2, Name = "Test" }, new Student() { Grade = 2, Name = "Test" }, new Student() { Grade = 2, Name = "Test" }, new Student() { Grade = 2, Name = "Test" }, new Student() { Grade = 2, Name = "Test" }, new Student() { Grade = 2, Name = "Test" }, new Student() { Grade = 2, Name = "Test" }, new Student() { Grade = 2, Name = "Test" }, new Student() { Grade = 2, Name = "Test" }, new Student() { Grade = 1, Name = "2" } , new Student() { Grade = 3, Name = "Test2" } };
 		public MainPage()
 		{
 			InitializeComponent();

@@ -1,16 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XamarinTest1"
-             x:Class="XamarinTest1.MainPage">
+             x:Class="XamarinTest1.MainPage"
+             NavigationPage.HasNavigationBar="False">
 
-	<ListView ItemsSource="{Binding}" ItemSelected="ListView_OnItemSelected">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding Name}" Detail="{Binding Grade}"/>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Frame BackgroundColor="DodgerBlue" Padding="5">
+                <StackLayout Orientation="Horizontal">
+                    <BoxView Color="Red"></BoxView>
+                    <SearchBar BackgroundColor="White"/>
+                </StackLayout>
+            </Frame>
+
+            <ListView ItemsSource="{Binding}" ItemSelected="ListView_OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" Detail="{Binding Grade}" TextColor="DodgerBlue" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
 
 </ContentPage>
