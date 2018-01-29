@@ -1,4 +1,23 @@
-﻿import express = require("express");
+﻿import { Request, Response } from "express";
+import { json } from "body-parser";
+import { Bike } from "../../models/Bike"
+import * as express from "express";
+
 var router = express.Router();
-router.get("/", require("./all" ));
-export = router;
+var data: Array<Bike> = require("./data");
+router.get("/",
+    (req: Request, res: Response) => {
+        res.status(200).json(data);
+    });
+router.get("/:id",
+    (req: Request, res: Response) => {
+        res.status(200).json(data.find((m: Bike) => m.id === parseInt(req.param("id", 0))));
+    });
+router.post("/",
+    json,
+    (req: Request, res: Response) => {
+        var toAdd: Bike = req.body;
+        data.push(toAdd);
+        res.status(204);
+    });
+export default router;
