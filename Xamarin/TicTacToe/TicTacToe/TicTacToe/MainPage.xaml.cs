@@ -1,21 +1,30 @@
-﻿using System.Windows.Input;
-using TicTacToe.Models;
+﻿using System;
+using System.Windows.Input;
 using Xamarin.Forms;
-using Cell = TicTacToe.Models.Cell;
 
 namespace TicTacToe
 {
     public partial class MainPage : ContentPage
     {
-        private Board board = new Board(3);
-        public ICommand BoardClicked;
-        private Player CurrentPlayer;
+        private string currentPlayer = "X";
 
         public MainPage()
         {
             BindingContext = this;
             InitializeComponent();
-            BoardClicked = new Command<Cell>(cell => cell.Player = CurrentPlayer);
+        }
+
+        private void Button_OnClicked(object sender, EventArgs e)
+        {
+            var btn = (Button) sender;
+            btn.Text = currentPlayer;
+            if (currentPlayer == "X")
+                currentPlayer = "O";
+            else
+            {
+                currentPlayer = "X";
+            }
+            CurerntPlayer.Text = currentPlayer;
         }
     }
 }
