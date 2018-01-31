@@ -5,12 +5,12 @@ import * as express from "express";
 
 var router = express.Router();
 router.get("/",
-    (req: Request, res: Response) => {
-        bikeModel.find((err, bikes) => {
+    async (req: Request, res: Response) => {
+        await bikeModel.find((err, bikes) => {
             if (err) {
                 res.status(500).send(err);
             }
-            res.status(200).json(bikes);
+            res.status(200).send(bikes);
         });
     });
 //router.get("/:id",
