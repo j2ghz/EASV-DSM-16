@@ -2,12 +2,14 @@
 import { json } from "body-parser";
 import { Bike } from "../../models/Bike"
 import * as express from "express";
+import { prop, Typegoose, ModelType, InstanceType } from "typegoose";
+let BikeModel = new Bike().getModelForClass(Bike);
 
 var router = express.Router();
 var data: Array<Bike> = require("./data");
 router.get("/",
     (req: Request, res: Response) => {
-        res.status(200).json(data);
+        BikeModel.find()
     });
 router.get("/:id",
     (req: Request, res: Response) => {
