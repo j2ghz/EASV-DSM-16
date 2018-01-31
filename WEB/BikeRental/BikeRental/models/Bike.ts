@@ -1,4 +1,4 @@
-﻿import { prop, Typegoose, ModelType, InstanceType } from "mongoose";
+﻿import { prop, Typegoose, ModelType, InstanceType } from "typegoose";
 
 export class Bike extends Typegoose {
     @prop()
@@ -8,3 +8,4 @@ export class Bike extends Typegoose {
     @prop()
     modelId: number;
 };
+export let bikeModel = new Bike().getModelForClass(Bike);
