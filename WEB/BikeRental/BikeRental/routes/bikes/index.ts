@@ -1,13 +1,15 @@
 ﻿import { Request, Response } from "express";
 import { json } from "body-parser";
-import { bikeModel, Bike } from "../../models/Bike"
+import { bikeModel } from "../../models/Bike"
 import * as express from "express";
-import { prop, Typegoose, ModelType, InstanceType } from "typegoose";
 
 var router = express.Router();
 router.get("/",
     (req: Request, res: Response) => {
         bikeModel.find((err, bikes) => {
+            if (err) {
+                res.status(500).send(err);
+            }
             res.status(200).json(bikes);
         });
     });
@@ -18,7 +20,13 @@ router.get("/",
 router.post("/",
     json,
     async (req: Request, res: Response) => {
-        await new bikeModel(req.body).save();
-        res.status(204);
+        await new bikeModel(req.body).save((err) => {
+            if (err) {
+                res.status(500).send(err);
+            } else {
+                res.status(204);
+            }
+        });
+
     });
 export default router;
