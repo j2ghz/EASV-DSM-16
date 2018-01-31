@@ -4,8 +4,8 @@
              xmlns:local="clr-namespace:CatchTheMouse"
              x:Class="CatchTheMouse.MainPage">
 
-    <AbsoluteLayout>
-        <Button></Button>
+    <AbsoluteLayout x:Name="AbsoluteLayout">
+        <Button x:Name="Button" Clicked="Button_OnClicked" AbsoluteLayout.LayoutBounds="0.5,0.5,0.2,0.2" AbsoluteLayout.LayoutFlags="All" ></Button>
     </AbsoluteLayout>
 
 </ContentPage>
