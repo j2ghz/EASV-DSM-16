@@ -6,29 +6,31 @@
 
     <StackLayout>
         <Label VerticalOptions="Start" HorizontalOptions="CenterAndExpand" x:Name="CurerntPlayer"/>
-        <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Grid.Row="0" Clicked="Button_OnClicked"/>
-            <Button Grid.Column="0" Grid.Row="1" Clicked="Button_OnClicked"/>
-            <Button Grid.Column="0" Grid.Row="2" Clicked="Button_OnClicked"/>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Clicked="Button_OnClicked"/>
+                <Button Grid.Column="0" Grid.Row="1" Clicked="Button_OnClicked"/>
+                <Button Grid.Column="0" Grid.Row="2" Clicked="Button_OnClicked"/>
 
-            <Button Grid.Column="1" Grid.Row="0" Clicked="Button_OnClicked"/>
-            <Button Grid.Column="1" Grid.Row="1" Clicked="Button_OnClicked"/>
-            <Button Grid.Column="1" Grid.Row="2" Clicked="Button_OnClicked"/>
+                <Button Grid.Column="1" Grid.Row="0" Clicked="Button_OnClicked"/>
+                <Button Grid.Column="1" Grid.Row="1" Clicked="Button_OnClicked"/>
+                <Button Grid.Column="1" Grid.Row="2" Clicked="Button_OnClicked"/>
 
-            <Button Grid.Column="2" Grid.Row="0" Clicked="Button_OnClicked"/>
-            <Button Grid.Column="2" Grid.Row="1" Clicked="Button_OnClicked"/>
-            <Button Grid.Column="2" Grid.Row="2" Clicked="Button_OnClicked"/>
-        </Grid>
+                <Button Grid.Column="2" Grid.Row="0" Clicked="Button_OnClicked"/>
+                <Button Grid.Column="2" Grid.Row="1" Clicked="Button_OnClicked"/>
+                <Button Grid.Column="2" Grid.Row="2" Clicked="Button_OnClicked"/>
+            </Grid>
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>

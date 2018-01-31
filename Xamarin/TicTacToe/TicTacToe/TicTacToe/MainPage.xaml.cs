@@ -18,12 +18,7 @@ namespace TicTacToe
         {
             var btn = (Button) sender;
             btn.Text = currentPlayer;
-            if (currentPlayer == "X")
-                currentPlayer = "O";
-            else
-            {
-                currentPlayer = "X";
-            }
+            currentPlayer = currentPlayer == "X" ? "O" : "X";
             CurerntPlayer.Text = currentPlayer;
         }
     }
