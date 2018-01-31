@@ -1,6 +1,6 @@
 ﻿import { Request, Response } from "express";
 import { json } from "body-parser";
-import { Bike, bikeModel} from "../../models/Bike"
+import { bikeModel, Bike } from "../../models/Bike"
 import * as express from "express";
 import { prop, Typegoose, ModelType, InstanceType } from "typegoose";
 
