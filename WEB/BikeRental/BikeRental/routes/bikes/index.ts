@@ -7,7 +7,6 @@ router.get("/",
     (req: Request, res: Response) => {
         console.log("Requested");
         bikeModel.find({},
-            {},
             (err, bikes) => {
                 console.log("db rec");
                 console.log(err);
@@ -24,12 +23,12 @@ router.get("/",
 //        res.status(200).json(data.find((m: Bike) => m.id === parseInt(req.param("id", 0))));
 //    });
 
-router.post("/",
-    async (req: Request, res: Response) => {
-        const bike = await bikeModel.create(req.body);
+//router.post("/",
+//    async (req: Request, res: Response) => {
+//        const bike = await bikeModel.create(req.body);
 
-        res.status(204).json(bike);
+//        res.status(204).json(bike);
 
-    });
+//    });
 
 export default router;
