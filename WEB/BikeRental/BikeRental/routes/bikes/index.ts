@@ -16,6 +16,7 @@ router.get("/",
                 }
                 res.json(bikes);
             });
+        console.log("Done");
     });
 
 //router.get("/:id",

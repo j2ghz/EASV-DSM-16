@@ -1,11 +1,11 @@
 ﻿import express = require("express"); //TODO: should be import express from "express"
 import { Application } from "express";
 import routes from "./routes";
-import {set, connect} from "mongoose";
+import * as mongoose from "mongoose";
 import { json, urlencoded } from "body-parser";
 
-connect("mongo://localhost:27017/BikeRental");
-set("debug", true);
+mongoose.connect("mongodb://localhost:27017/BikeRental");
+
 
 const app: Application = express();
 
