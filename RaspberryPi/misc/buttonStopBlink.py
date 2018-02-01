@@ -14,6 +14,10 @@ def off(n):
 t=0.1
 
 while True:
+    if not GPIO.input(18):
+        t = 0.1
+    else:
+        t = 0.01
     off(20)
     on(26)    
     sleep(t)
@@ -23,5 +27,3 @@ while True:
     off(21)
     on(20)
     sleep(t)
-    if not GPIO.input(18):
-        t = 0.9 * t
