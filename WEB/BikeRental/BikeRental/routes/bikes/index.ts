@@ -1,15 +1,22 @@
 ﻿import { Request, Response, Router } from "express";
-import { json } from "body-parser";
 import { bikeModel } from "./../../models/Bike";
 
 let router: Router = Router();
 
 router.get("/",
-    async (req: Request, res: Response) => {
-
-        const bikes = await bikeModel.find({}).exec();
-
-        res.json(bikes);
+    (req: Request, res: Response) => {
+        console.log("Requested");
+        bikeModel.find({},
+            {},
+            (err, bikes) => {
+                console.log("db rec");
+                console.log(err);
+                console.log(bikes);
+                if (err) {
+                    res.status(500).send(err);
+                }
+                res.json(bikes);
+            });
     });
 
 //router.get("/:id",

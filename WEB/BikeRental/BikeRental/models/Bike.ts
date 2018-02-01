@@ -2,6 +2,6 @@
 
 export class Bike extends Typegoose {
     @prop()
-    name: string;
+    name?: string;
 };
 export let bikeModel = new Bike().getModelForClass(Bike);

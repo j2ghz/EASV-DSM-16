@@ -7,8 +7,9 @@
     "name": "j200g"
   },
   "devDependencies": {
-    "@types/body-parser": "^1.16",
-    "@types/express": "^4.11",
+    "@types/body-parser": "^1.18",
+    "@types/express": "^4.16",
+    "@types/mongoose": "^4.13",
     "@types/node": "^9.4.0"
   },
   "dependencies": {
