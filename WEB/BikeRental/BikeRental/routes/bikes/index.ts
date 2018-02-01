@@ -1,12 +1,12 @@
 ﻿import { Request, Response, Router } from "express";
-import { bikeModel } from "./../../models/Bike";
+import { bike } from "./../../models/Bike";
 
 let router: Router = Router();
 
 router.get("/",
     (req: Request, res: Response) => {
         console.log("Requested");
-        bikeModel.find({},
+        bike.find({},
             (err, bikes) => {
                 console.log("db rec");
                 console.log(err);

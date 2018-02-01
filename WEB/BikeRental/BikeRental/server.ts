@@ -4,8 +4,6 @@ import routes from "./routes";
 import * as mongoose from "mongoose";
 import { json, urlencoded } from "body-parser";
 
-mongoose.connect("mongodb://localhost:27017/BikeRental");
-
 
 const app: Application = express();
 

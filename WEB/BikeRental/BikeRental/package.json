@@ -15,7 +15,6 @@
   "dependencies": {
     "body-parser": "^1.16",
     "express": "^4.11",
-    "mongoose": "^5.0.2",
-    "typegoose": "^3.8"
+    "mongoose": "^5.0.2"
   }
 }

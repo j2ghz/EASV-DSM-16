@@ -1,7 +1,16 @@
-﻿import { prop, Typegoose, ModelType, InstanceType } from "typegoose";
+﻿import { Document, Model, Schema } from "mongoose";
+import { mongoose } from "../database";
 
-export class Bike extends Typegoose {
-    @prop()
-    name?: string;
-};
-export let bikeModel = new Bike().getModelForClass(Bike);
+export interface IBike extends Document {
+    name: string;
+}
+
+export interface IBikeModel extends Model<IBike> {
+    
+}
+
+const schema = new Schema({
+    name: { type: String, required: true }
+});
+
+export const bike = mongoose.model<IBike>("Author", schema) as IBikeModel;
