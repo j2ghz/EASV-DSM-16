@@ -1,7 +1,7 @@
 ﻿import { Request, Response } from "express";
 import { json } from "body-parser";
 import { bikeModel } from "../../models/Bike"
-import * as express from "express";
+import express from "express";
 
 var router = express.Router();
 router.get("/",
