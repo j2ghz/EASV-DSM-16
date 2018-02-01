@@ -10,11 +10,11 @@ def on(n):
 def off(n):
     GPIO.output(n, False)
 
-t=0.1
+t=0.05
 
 while True:
-    on(26)
     off(21)
+    on(26)    
     sleep(t)
     while not GPIO.input(18):
         sleep(t)
