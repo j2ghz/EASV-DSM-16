@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<xamForms:ReactiveViewCell
+    x:TypeArguments="m:HighScore"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+    xmlns:m="clr-namespace:Kalaha.Models"
+    x:Class="Kalaha.Views.HighScoresViewCell">
+    <StackLayout Orientation="Horizontal">
+        <Label x:Name="Name" />
+        <Label x:Name="Date" />
+        <Label x:Name="Score" />
+    </StackLayout>
+</xamForms:ReactiveViewCell>

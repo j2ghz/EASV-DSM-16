@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Akavache;
 using Xamarin.Forms;
 
 namespace Kalaha
@@ -11,10 +11,12 @@ namespace Kalaha
 	{
 		public App ()
 		{
-			InitializeComponent();
+		    BlobCache.ApplicationName = nameof(Kalaha);
+            InitializeComponent();
 
-			MainPage = new Kalaha.MainPage();
-		}
+		    var bootstrapper = new AppBootstrapper();
+		    MainPage = bootstrapper.CreateMainPage();
+        }
 
 		protected override void OnStart ()
 		{
