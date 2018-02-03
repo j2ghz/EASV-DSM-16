@@ -5,6 +5,7 @@
                     xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
                     xmlns:ui="clr-namespace:Kalaha.Views"
                     xmlns:vms="clr-namespace:Kalaha.ViewModels"
+                    xmlns:m="clr-namespace:Kalaha.Models"
                     x:Class="Kalaha.HighScores"
                     x:TypeArguments="vms:HighScoresViewModel">
     <ListView x:Name="HighScoreList"

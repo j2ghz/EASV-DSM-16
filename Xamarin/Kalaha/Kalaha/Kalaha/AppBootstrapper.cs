@@ -16,8 +16,8 @@ namespace Kalaha
         {
             Router = new RoutingState();
             Locator.CurrentMutable.RegisterConstant(this, typeof(IScreen));
-            Locator.CurrentMutable.Register(() => new HighScoresViewModel(), typeof(IViewFor<HighScoresViewModel>));
-            Locator.CurrentMutable.Register(() => new HighScoresViewCell(), typeof(IViewFor<HighScoresViewCell>));
+            Locator.CurrentMutable.Register(() => new HighScores(), typeof(IViewFor<HighScoresViewModel>));
+            Locator.CurrentMutable.Register(() => new HighScoresViewCell(), typeof(IViewFor<HighScores>));
             //Locator.CurrentMutable.Register(() => new MovieDetailView(), typeof(IViewFor<MovieDetailViewModel>));
 
             //Locator.CurrentMutable.Register(() => new Cache(), typeof(ICache));
