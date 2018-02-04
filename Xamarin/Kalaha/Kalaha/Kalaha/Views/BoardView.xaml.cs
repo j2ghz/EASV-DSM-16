@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Kalaha.ViewModels;
+using ReactiveUI;
 using ReactiveUI.XamForms;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,6 +17,11 @@ namespace Kalaha.Views
 		public BoardView ()
 		{
 			InitializeComponent ();
+
+		    this.WhenActivated(disposables =>
+		    {
+		        this.OneWayBind(ViewModel, x => x.Board.CellOwn, x => x.CellOwn);
+		    });
 		}
 	}
 }
