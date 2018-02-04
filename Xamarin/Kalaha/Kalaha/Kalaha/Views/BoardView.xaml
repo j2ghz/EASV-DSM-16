@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xF:ReactiveContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xF="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+             xmlns:vm="clr-namespace:Kalaha.ViewModels;assembly=Kalaha"
+             xmlns:v="clr-namespace:Kalaha.Views;assembly=Kalaha"
+             x:Class="Kalaha.Views.BoardView"
+                        x:TypeArguments="vm:BoardViewModel">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <v:CellView Grid.Row="0" Grid.Column="0" x:Name="CellOwn" Grid.RowSpan="2"/>
+        <v:CellView Grid.Row="0" Grid.Column="1" x:Name="Cell1" />
+        <v:CellView Grid.Row="0" Grid.Column="2" x:Name="Cell2" />
+        <v:CellView Grid.Row="0" Grid.Column="3" x:Name="Cell3" />
+        <v:CellView Grid.Row="0" Grid.Column="4" x:Name="Cell4" />
+        <v:CellView Grid.Row="0" Grid.Column="5" x:Name="Cell5" />
+        <v:CellView Grid.Row="0" Grid.Column="6" x:Name="Cell6" />
+        <v:CellView Grid.Row="0" Grid.Column="7" x:Name="CellEnemy" Grid.RowSpan="2" />
+        <v:CellView Grid.Row="1" Grid.Column="6" x:Name="Cell7" />
+        <v:CellView Grid.Row="1" Grid.Column="5" x:Name="Cell8" />
+        <v:CellView Grid.Row="1" Grid.Column="4" x:Name="Cell9" />
+        <v:CellView Grid.Row="1" Grid.Column="3" x:Name="Cell10" />
+        <v:CellView Grid.Row="1" Grid.Column="2" x:Name="Cell11" />
+        <v:CellView Grid.Row="1" Grid.Column="1" x:Name="Cell12" />
+    </Grid>
+</xF:ReactiveContentView>
