@@ -16,7 +16,7 @@ namespace SQLite
 			InitializeComponent();
   
 
-		    var conn = new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MyData.db"));
+		    var conn = new SQLiteAsyncConnection(DependencyService.Get<IFileHelper>().GetLocalFilePath("db.sqlite"));
 		    conn.CreateTableAsync<Start>().GetAwaiter().GetResult();
 
             conn.InsertAsync(new Start {Time = DateTime.Now});

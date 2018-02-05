@@ -21,7 +21,7 @@ namespace SQLite
 	    private async void Init()
 	    {
 	        var starts = await db.Table<Start>().ToListAsync();
-            Label.Text = string.Join(Environment.NewLine,starts);
+            Label.Text = string.Join(Environment.NewLine,starts.Select(s=>s.Time));
 
 	    }
 	}
