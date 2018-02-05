@@ -1,21 +1,20 @@
 from time import sleep, asctime
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
-LED=18
-SENSOR=4
-GPIO.setup(SENSOR, GPIO.IN)
-GPIO.setup(LED, GPIO.OUT)
+LOW=4
+MID=5
+HIGH=13
 
-def on(n):
-    GPIO.output(n, True)
-def off(n):
-    GPIO.output(n, False)
+GPIO.setup(LOW, GPIO.IN)
+GPIO.setup(MID, GPIO.IN)
+GPIO.setup(HIGH, GPIO.IN)
 
 while True:
-    if GPIO.input(SENSOR) == 1:
-        print("Water warning: " + asctime())
-        on(LED)
-        sleep(1)
-    else:
-        off(LED)
-        sleep(0.2)
+    print(asctime())
+    if GPIO.input(HIGH) == 1:
+        print("High")
+    if GPIO.input(MID) == 1:
+        print("Mid")
+    if GPIO.input(LOW) == 1:
+        print("Low")
+    sleep(1)
