@@ -2,23 +2,18 @@
 
 namespace Kalaha.Models
 {
-    public class Cell : ReactiveObject
+    public abstract class Cell : ReactiveObject
     {
         public Cell Next { get; set; }
         public byte Seeds { get; set; }
 
         public void MoveSeeds()
         {
+            var seeds = Seeds;
+            Seeds = 0;
+            Next.MoveSeeds(seeds);
         }
 
-        public void MoveSeeds(byte seedCount)
-        {
-            Seeds++;
-            if (seedCount > 0)
-                Next.MoveSeeds(--seedCount);
-            //if end at own house, one more move
-            //maybe different types for house/store?
-
-        }
+        public abstract void MoveSeeds(byte seedCount);
     }
 }
