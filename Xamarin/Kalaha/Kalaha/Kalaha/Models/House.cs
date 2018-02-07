@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Kalaha.Models
 {
-    class House : Cell
+    public class House : Cell
     {
         public override void MoveSeeds(byte seedCount)
         {

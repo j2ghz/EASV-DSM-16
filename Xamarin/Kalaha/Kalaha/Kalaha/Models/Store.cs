@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Kalaha.Models
 {
-    class Store : Cell
+    public class Store : Cell
     {
     }
 }
