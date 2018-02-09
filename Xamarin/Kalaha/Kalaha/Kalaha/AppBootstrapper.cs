@@ -20,8 +20,13 @@ namespace Kalaha
             var board = new Board(6,4);
             Router = new RoutingState();
             Locator.CurrentMutable.RegisterConstant(this, typeof(IScreen));
-            Locator.CurrentMutable.Register(() => new HighScores(), typeof(IViewFor<HighScoresViewModel>));
-            Locator.CurrentMutable.Register(() => new HighScoresViewCell(), typeof(IViewFor<HighScores>));
+            Locator.CurrentMutable.Register(() => new HighScoresPage(), typeof(IViewFor<HighScoresViewModel>));
+            Locator.CurrentMutable.Register(() => new HighScoresViewCell(), typeof(IViewFor<HighScoresPage>));
+            Locator.CurrentMutable.Register(() => new PlayPage(), typeof(IViewFor<PlayViewModel>));
+            Locator.CurrentMutable.Register(() => new CellView(), typeof(IViewFor<House>));
+            Locator.CurrentMutable.Register(() => new CellView(), typeof(IViewFor<Store>));
+
+
             //Locator.CurrentMutable.Register(() => new MovieDetailView(), typeof(IViewFor<MovieDetailViewModel>));
 
             //Locator.CurrentMutable.Register(() => new Cache(), typeof(ICache));
@@ -31,7 +36,7 @@ namespace Kalaha
             this
                 .Router
                 .NavigateAndReset
-                .Execute(new HighScoresViewModel())
+                .Execute(new PlayViewModel())
                 .Subscribe();
         }
 

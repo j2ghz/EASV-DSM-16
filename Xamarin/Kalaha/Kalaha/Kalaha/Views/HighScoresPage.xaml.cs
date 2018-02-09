@@ -7,9 +7,9 @@ using Xamarin.Forms.Xaml;
 namespace Kalaha
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HighScores : ContentPageBase<HighScoresViewModel>
+    public partial class HighScoresPage : ContentPageBase<HighScoresViewModel>
     {
-        public HighScores()
+        public HighScoresPage()
         {
             InitializeComponent();
 
