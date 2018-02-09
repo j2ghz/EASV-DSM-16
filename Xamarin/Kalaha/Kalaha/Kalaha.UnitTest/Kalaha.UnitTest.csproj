@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Kalaha\Kalaha\Kalaha.csproj" />
+    <ProjectReference Include="..\Kalaha\Kalaha.csproj" />
   </ItemGroup>
 
 </Project>
