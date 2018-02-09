@@ -1,12 +1,16 @@
-﻿using ReactiveUI;
+﻿using System;
+using System.Reactive.Linq;
+using ReactiveUI;
 
 namespace Kalaha.Models
 {
     public abstract class Cell : ReactiveObject
     {
-        protected Cell()
+        protected Cell(IObservable<bool> belongsToActiveSideObservable, byte initialCount)
         {
-            var canMove = this.WhenAnyValue(x => x.Seeds, x => x.Next, (seeds, next) => seeds > 0 && next != null);
+            Seeds = initialCount;
+            var canMove = this.WhenAnyValue(x => x.Seeds, x => x.Next, (seeds, next) => seeds > 0 && next != null)
+                .CombineLatest(belongsToActiveSideObservable, (a, b) => a && b);
             StartMovingSeeds = ReactiveCommand.Create(MoveSeeds, canMove);
         }
 

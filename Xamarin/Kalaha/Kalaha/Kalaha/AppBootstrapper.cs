@@ -1,4 +1,5 @@
 ﻿using System;
+using Kalaha.Models;
 using Kalaha.ViewModels;
 using Kalaha.Views;
 using ReactiveUI;
@@ -14,6 +15,7 @@ namespace Kalaha
 
         public AppBootstrapper()
         {
+            var board = new Board(6,4);
             Router = new RoutingState();
             Locator.CurrentMutable.RegisterConstant(this, typeof(IScreen));
             Locator.CurrentMutable.Register(() => new HighScores(), typeof(IViewFor<HighScoresViewModel>));
