@@ -4,8 +4,9 @@
              xmlns:xF="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
              xmlns:vm="clr-namespace:Kalaha.ViewModels;assembly=Kalaha"
              xmlns:v="clr-namespace:Kalaha.Views;assembly=Kalaha"
+             xmlns:m="clr-namespace:Kalaha.Models;assembly=Kalaha"
              x:Class="Kalaha.Views.BoardView"
-                        x:TypeArguments="vm:BoardViewModel">
+                        x:TypeArguments="m:Board">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -21,19 +22,19 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <v:CellView Grid.Row="0" Grid.Column="0" x:Name="CellOwn" Grid.RowSpan="2"/>
-        <v:CellView Grid.Row="0" Grid.Column="1" x:Name="Cell1" />
-        <v:CellView Grid.Row="0" Grid.Column="2" x:Name="Cell2" />
-        <v:CellView Grid.Row="0" Grid.Column="3" x:Name="Cell3" />
-        <v:CellView Grid.Row="0" Grid.Column="4" x:Name="Cell4" />
-        <v:CellView Grid.Row="0" Grid.Column="5" x:Name="Cell5" />
-        <v:CellView Grid.Row="0" Grid.Column="6" x:Name="Cell6" />
-        <v:CellView Grid.Row="0" Grid.Column="7" x:Name="CellEnemy" Grid.RowSpan="2" />
-        <v:CellView Grid.Row="1" Grid.Column="6" x:Name="Cell7" />
-        <v:CellView Grid.Row="1" Grid.Column="5" x:Name="Cell8" />
-        <v:CellView Grid.Row="1" Grid.Column="4" x:Name="Cell9" />
-        <v:CellView Grid.Row="1" Grid.Column="3" x:Name="Cell10" />
-        <v:CellView Grid.Row="1" Grid.Column="2" x:Name="Cell11" />
-        <v:CellView Grid.Row="1" Grid.Column="1" x:Name="Cell12" />
+        <v:CellView Grid.Row="0" Grid.Column="0" x:Name="NorthStore" Grid.RowSpan="2"/>
+        <v:CellView Grid.Row="0" Grid.Column="1" x:Name="North1" />
+        <v:CellView Grid.Row="0" Grid.Column="2" x:Name="North2" />
+        <v:CellView Grid.Row="0" Grid.Column="3" x:Name="North3" />
+        <v:CellView Grid.Row="0" Grid.Column="4" x:Name="North4" />
+        <v:CellView Grid.Row="0" Grid.Column="5" x:Name="North5" />
+        <v:CellView Grid.Row="0" Grid.Column="6" x:Name="North6" />
+        <v:CellView Grid.Row="0" Grid.Column="7" x:Name="SouthStore" Grid.RowSpan="2" />
+        <v:CellView Grid.Row="1" Grid.Column="6" x:Name="South1" />
+        <v:CellView Grid.Row="1" Grid.Column="5" x:Name="South2" />
+        <v:CellView Grid.Row="1" Grid.Column="4" x:Name="South3" />
+        <v:CellView Grid.Row="1" Grid.Column="3" x:Name="South4" />
+        <v:CellView Grid.Row="1" Grid.Column="2" x:Name="South5" />
+        <v:CellView Grid.Row="1" Grid.Column="1" x:Name="South6" />
     </Grid>
 </xF:ReactiveContentView>

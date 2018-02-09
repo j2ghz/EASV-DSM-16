@@ -15,7 +15,7 @@ namespace Kalaha.Models
             South = new Side(Observable.Return(true),houses,initialCount);
             North = new Side(Observable.Return(true), houses,initialCount);
             South.Store.Next = North.Houses.First();
-            South.Store.Next = North.Houses.First();
+            North.Store.Next = South.Houses.First();
             for (var i = 0; i < houses; i++)
             {
                 South.Houses[i].Opposite = North.Houses[houses - 1 - i];
