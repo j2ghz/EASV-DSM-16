@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Kalaha.Models;
 using Kalaha.ViewModels;
 using Kalaha.Views;
@@ -15,6 +16,7 @@ namespace Kalaha
 
         public AppBootstrapper()
         {
+        
             var board = new Board(6,4);
             Router = new RoutingState();
             Locator.CurrentMutable.RegisterConstant(this, typeof(IScreen));

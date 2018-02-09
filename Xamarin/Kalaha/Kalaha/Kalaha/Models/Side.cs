@@ -14,7 +14,7 @@ namespace Kalaha.Models
             Store=new Store(belongsToActiveSideObservable);
             Houses=new ReactiveList<House>(Enumerable.Range(0, houses).Select(i => new House(belongsToActiveSideObservable, initialCount)));
             Houses.Last().Next = Store;
-            for (var i = Houses.Count-2; i == 0 ; i++)
+            for (var i = Houses.Count-2; i >= 0 ; i--)
             {
                 Houses[i].Next = Houses[i + 1];
             }
