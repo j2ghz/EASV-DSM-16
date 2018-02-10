@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Disposables;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Kalaha.ViewModels;
@@ -18,11 +20,11 @@ namespace Kalaha.Views
 		public CellView ()
 		{
 			InitializeComponent ();
-
+		    
 		    this.WhenActivated(disposable =>
 		    {
 		        this.OneWayBind(ViewModel, x => x.Seeds, x => x.Button.Text).DisposeWith(disposable);
-		        this.BindCommand(ViewModel, x => x.StartMovingSeeds, x => x.Button);
+		        this.BindCommand(ViewModel, x => x.StartMovingSeeds, x => x.Button).DisposeWith(disposable);
 		    });
 		}
 	}

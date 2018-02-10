@@ -7,10 +7,17 @@ namespace Kalaha.Models
 {
     public class Board : ReactiveObject
     {
+        private readonly IObservable<bool> currentPlayer =
+            Observable
+            .Interval(TimeSpan.FromSeconds(1))
+            .Select(i => i % 2 == 0)
+            .Publish()
+            .RefCount();
+
         public Board(byte houses, byte initialCount)
         {
-            South = new Side(Observable.Interval(TimeSpan.FromSeconds(1)).Select(i => i % 2 == 1), houses, initialCount);
-            North = new Side(Observable.Interval(TimeSpan.FromSeconds(1)).Select(i=> i%2==0), houses, initialCount);
+            South = new Side(currentPlayer.Select(v => !v), houses, initialCount);
+            North = new Side(currentPlayer, houses, initialCount);
             South.Store.Next = North.Houses.First();
             North.Store.Next = South.Houses.First();
             for (var i = 0; i < houses; i++)

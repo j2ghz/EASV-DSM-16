@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reactive.Linq;
+using ReactiveUI;
 
 namespace Kalaha.Models
 {
@@ -7,9 +9,14 @@ namespace Kalaha.Models
         public House(IObservable<bool> belongsToActiveSideObservable, byte initialCount) : base(
             belongsToActiveSideObservable, initialCount)
         {
+            var canMove = this.WhenAnyValue(x => x.Seeds, seeds => seeds > 0)
+                .CombineLatest(belongsToActiveSideObservable, (a, b) => a && b);
+            StartMovingSeeds = ReactiveCommand.Create(MoveSeeds, canMove);
         }
 
         public House Opposite { get; set; }
+
+        public override ReactiveCommand StartMovingSeeds { get; }
 
         public override void MoveSeeds(byte seedCount)
         {
@@ -21,6 +28,13 @@ namespace Kalaha.Models
             if (seedCount == 1)
                 return;
             Next.MoveSeeds(--seedCount);
+        }
+
+        private void MoveSeeds()
+        {
+            var toMove = Seeds;
+            Seeds = 0;
+            Next.MoveSeeds(toMove);
         }
     }
 }
