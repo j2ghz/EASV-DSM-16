@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Kalaha.Models
 {
     public class Store : Cell
     {
-        public Store(IObservable<bool> belongsToActiveSideObservable) : base(belongsToActiveSideObservable,0)
+        public Store(IObservable<bool> belongsToActiveSideObservable) : base(belongsToActiveSideObservable, 0)
         {
         }
 
@@ -14,10 +12,7 @@ namespace Kalaha.Models
         {
             Seeds++;
             if (seedCount == 1)
-            {
-                //Don't switch player
                 return;
-            }
             Next.MoveSeeds(--seedCount);
         }
     }
