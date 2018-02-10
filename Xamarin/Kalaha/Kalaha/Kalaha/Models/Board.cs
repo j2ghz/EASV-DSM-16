@@ -6,10 +6,6 @@ namespace Kalaha.Models
 {
     public class Board : ReactiveObject
     {
-        private Side north;
-        private Side south;
-
-
         public Board(byte houses, byte initialCount)
         {
             South = new Side(Observable.Return(true), houses, initialCount);
@@ -23,16 +19,8 @@ namespace Kalaha.Models
             }
         }
 
-        public Side South
-        {
-            get => south;
-            set => this.RaiseAndSetIfChanged(ref south, value);
-        }
+        public Side South { get; }
 
-        public Side North
-        {
-            get => north;
-            set => this.RaiseAndSetIfChanged(ref north, value);
-        }
+        public Side North { get; }
     }
 }

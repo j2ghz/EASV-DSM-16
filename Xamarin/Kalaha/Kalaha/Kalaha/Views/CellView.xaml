@@ -6,5 +6,5 @@
                         xmlns:m="clr-namespace:Kalaha.Models;assembly=Kalaha"
                         x:Class="Kalaha.Views.CellView"
                         x:TypeArguments="m:Cell">
-    <Button x:Name="Button"/>
+    <Button x:Name="Button" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 </xF:ReactiveContentView>

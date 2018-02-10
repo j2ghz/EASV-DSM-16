@@ -1,40 +1,40 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xF:ReactiveContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xF="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
-             xmlns:vm="clr-namespace:Kalaha.ViewModels;assembly=Kalaha"
-             xmlns:v="clr-namespace:Kalaha.Views;assembly=Kalaha"
-             xmlns:m="clr-namespace:Kalaha.Models;assembly=Kalaha"
-             x:Class="Kalaha.Views.BoardView"
+
+<xF:ReactiveContentView xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:xF="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                        xmlns:vm="clr-namespace:Kalaha.ViewModels;assembly=Kalaha"
+                        xmlns:v="clr-namespace:Kalaha.Views;assembly=Kalaha"
+                        xmlns:m="clr-namespace:Kalaha.Models;assembly=Kalaha"
+                        xmlns:cc="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.RepeaterView"
+                        x:Class="Kalaha.Views.BoardView"
                         x:TypeArguments="m:Board">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <v:CellView Grid.Row="0" Grid.Column="0" x:Name="NorthStore" Grid.RowSpan="2"/>
-        <v:CellView Grid.Row="0" Grid.Column="1" x:Name="North1" />
-        <v:CellView Grid.Row="0" Grid.Column="2" x:Name="North2" />
-        <v:CellView Grid.Row="0" Grid.Column="3" x:Name="North3" />
-        <v:CellView Grid.Row="0" Grid.Column="4" x:Name="North4" />
-        <v:CellView Grid.Row="0" Grid.Column="5" x:Name="North5" />
-        <v:CellView Grid.Row="0" Grid.Column="6" x:Name="North6" />
-        <v:CellView Grid.Row="0" Grid.Column="7" x:Name="SouthStore" Grid.RowSpan="2" />
-        <v:CellView Grid.Row="1" Grid.Column="6" x:Name="South1" />
-        <v:CellView Grid.Row="1" Grid.Column="5" x:Name="South2" />
-        <v:CellView Grid.Row="1" Grid.Column="4" x:Name="South3" />
-        <v:CellView Grid.Row="1" Grid.Column="3" x:Name="South4" />
-        <v:CellView Grid.Row="1" Grid.Column="2" x:Name="South5" />
-        <v:CellView Grid.Row="1" Grid.Column="1" x:Name="South6" />
+
+        <v:CellView Grid.Row="0" Grid.Column="0" x:Name="NorthStore" Grid.RowSpan="2" />
+        <cc:RepeaterView Grid.Row="0" Grid.Column="1" x:Name="NorthHouses" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <cc:RepeaterView.ItemTemplate>
+                <DataTemplate>
+                    <v:CellView HorizontalOptions="FillAndExpand"/>
+                </DataTemplate>
+            </cc:RepeaterView.ItemTemplate>
+        </cc:RepeaterView>
+        <v:CellView Grid.Row="0" Grid.Column="2" x:Name="SouthStore" Grid.RowSpan="2" />
+        <cc:RepeaterView Grid.Row="1" Grid.Column="1" x:Name="SouthHouses" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <cc:RepeaterView.ItemTemplate>
+                <DataTemplate>
+                    <v:CellView HorizontalOptions="FillAndExpand"/>
+                </DataTemplate>
+            </cc:RepeaterView.ItemTemplate>
+        </cc:RepeaterView>
     </Grid>
 </xF:ReactiveContentView>

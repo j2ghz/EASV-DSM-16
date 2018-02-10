@@ -20,7 +20,7 @@ namespace Kalaha.Views
 
 		    this.WhenActivated(disposable =>
 		    {
-		        this.OneWayBind(ViewModel, x => x.Board, x => x.BoardView).DisposeWith(disposable);
+		        this.OneWayBind(ViewModel, x => x.Board, x => x.BoardView.ViewModel).DisposeWith(disposable);
 		    });
 		}
 	}
