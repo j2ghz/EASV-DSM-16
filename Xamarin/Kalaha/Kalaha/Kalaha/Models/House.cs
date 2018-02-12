@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Reactive.Linq;
 using ReactiveUI;
 
@@ -16,7 +17,7 @@ namespace Kalaha.Models
 
         public House Opposite { get; set; }
 
-        public override ReactiveCommand StartMovingSeeds { get; }
+        public sealed override ReactiveCommand StartMovingSeeds { get; }
 
         public override void MoveSeeds(byte seedCount)
         {

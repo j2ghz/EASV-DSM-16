@@ -25,6 +25,8 @@ namespace Kalaha.Views
 		    {
 		        this.OneWayBind(ViewModel, x => x.Seeds, x => x.Button.Text).DisposeWith(disposable);
 		        this.BindCommand(ViewModel, x => x.StartMovingSeeds, x => x.Button).DisposeWith(disposable);
+		        if (Button.Command != null)
+		            Button.Command.CanExecuteChanged += (sender, args) => Debug.WriteLine(Button.Command.CanExecute(null));
 		    });
 		}
 	}
