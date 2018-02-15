@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="akavache" Version="6.0.0-alpha0038" />
-    <PackageReference Include="DynamicData.ReactiveUI" Version="6.0.4.2351" />
+    <PackageReference Include="DynamicData.ReactiveUI" Version="6.1.1.2369" />
     <PackageReference Include="ReactiveUI.Events.XamForms" Version="8.0.0-alpha0117" />
     <PackageReference Include="ReactiveUI.XamForms" Version="8.0.0-alpha0117" />
     <PackageReference Include="Xamarin.CustomControls.RepeaterView" Version="1.2.2" />
