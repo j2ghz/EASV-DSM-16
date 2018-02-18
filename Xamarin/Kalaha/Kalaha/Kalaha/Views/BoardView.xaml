@@ -29,7 +29,7 @@
             </cc:RepeaterView.ItemTemplate>
         </cc:RepeaterView>
         <v:CellView Grid.Row="0" Grid.Column="2" x:Name="SouthStore" Grid.RowSpan="2" />
-        <cc:RepeaterView Grid.Row="1" Grid.Column="1" x:Name="SouthHouses" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+        <cc:RepeaterView Grid.Row="1" Grid.Column="1" x:Name="SouthHouses" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
             <cc:RepeaterView.ItemTemplate>
                 <DataTemplate>
                     <v:CellView HorizontalOptions="FillAndExpand"/>
