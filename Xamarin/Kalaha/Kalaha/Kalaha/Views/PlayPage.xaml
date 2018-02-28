@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:v="clr-namespace:Kalaha.Views;assembly=Kalaha"
              xmlns:vm="clr-namespace:Kalaha.ViewModels;assembly=Kalaha"
-             x:Class="Kalaha.Views.PlayPage">
+             x:Class="Kalaha.Views.PlayPage"
+             NavigationPage.HasNavigationBar="False">
     <v:BoardView x:Name="BoardView"/>
 </v:ContentPageBase>

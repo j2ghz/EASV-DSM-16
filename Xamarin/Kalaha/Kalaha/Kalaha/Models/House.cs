@@ -7,9 +7,12 @@ namespace Kalaha.Models
 {
     public class House : Cell
     {
-        public House(IObservable<bool> belongsToActiveSideObservable, byte initialCount) : base(
+        private readonly Action played;
+
+        public House(IObservable<bool> belongsToActiveSideObservable, byte initialCount, Action played) : base(
             belongsToActiveSideObservable, initialCount)
         {
+            this.played = played;
             var canMove = this.WhenAnyValue(x => x.Seeds, seeds => seeds > 0)
                 .CombineLatest(belongsToActiveSideObservable, (a, b) => a && b);
             StartMovingSeeds = ReactiveCommand.Create(MoveSeeds, canMove);
@@ -33,6 +36,7 @@ namespace Kalaha.Models
 
         private void MoveSeeds()
         {
+            played();
             var toMove = Seeds;
             Seeds = 0;
             Next.MoveSeeds(toMove);
