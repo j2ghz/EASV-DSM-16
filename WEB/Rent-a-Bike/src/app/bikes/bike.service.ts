@@ -15,4 +15,9 @@ export class BikeService {
     return of(BIKES);
   }
 
+  getBike(id: number): Observable<Bike> {
+    this.messageService.add(`BikeService: fetched bike with id=${id} at ` + new Date().toLocaleString());
+    return of(BIKES.find(bike=> bike.id === id));
+  }
+
 }
