@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Bike } from '../bike';
-import { BIKES } from '../mock-bikes';
+import { BikeService } from './bike.service';
 import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 
 @Component({
@@ -10,17 +10,22 @@ import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 })
 export class BikesComponent implements OnInit {
 
-  bikes = BIKES;
+  bikes: Bike[];
 
   selectedBike: Bike;
 
-  constructor() { }
+  constructor(private bikeService: BikeService) { }
+
+  getBikes(): void {
+    this.bikes = this.bikeService.getBikes();
+  }
 
   onSelect(bike: Bike): void {
     this.selectedBike = bike;
   }
 
   ngOnInit() {
+    this.getBikes();
   }
 
 }

@@ -8,6 +8,7 @@ import { BikesComponent } from './bikes/bikes.component';
 import { BikeListComponent } from './bikes/bike-list/bike-list.component';
 import { BikeRowComponent } from './bikes/bike-list/bike-row/bike-row.component';
 import { BikeDetailComponent } from './bikes/bike-detail/bike-detail.component';
+import { BikeService } from './bikes/bike.service';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { BikeDetailComponent } from './bikes/bike-detail/bike-detail.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    BikeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
