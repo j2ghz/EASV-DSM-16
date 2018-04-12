@@ -1,9 +1,6 @@
-<div>
-  <label>name:
-    <input [(ngModel)]="bike.name" placeholder="name">
-  </label>
-</div>
-
-<h2>{{ bike.name | uppercase }} Details</h2>
-<div><span>id: </span>{{bike.id}}</div>
-<div><span>name: </span>{{bike.name}}</div>
+<h2>My Bikes</h2>
+<ul class="bikes">
+  <li *ngFor="let bike of bikes">
+    <span class="badge">{{bike.id}}</span> {{bike.name}}
+  </li>
+</ul>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Bike } from '../bike';
+import { BIKES } from '../mock-bikes';
 
 @Component({
   selector: 'app-bikes',
@@ -8,10 +9,7 @@ import { Bike } from '../bike';
 })
 export class BikesComponent implements OnInit {
 
-  bike: Bike = {
-    id: 1,
-    name: 'Generic'
-  };
+  bikes = BIKES;
 
   constructor() { }
 
