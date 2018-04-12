@@ -9,6 +9,8 @@ import { BikeListComponent } from './bikes/bike-list/bike-list.component';
 import { BikeRowComponent } from './bikes/bike-list/bike-row/bike-row.component';
 import { BikeDetailComponent } from './bikes/bike-detail/bike-detail.component';
 import { BikeService } from './bikes/bike.service';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './messages/message.service';
 
 
 @NgModule({
@@ -17,14 +19,16 @@ import { BikeService } from './bikes/bike.service';
     BikesComponent,
     BikeListComponent,
     BikeRowComponent,
-    BikeDetailComponent
+    BikeDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [
-    BikeService
+    BikeService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
