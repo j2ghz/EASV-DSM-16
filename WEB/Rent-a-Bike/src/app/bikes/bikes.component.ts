@@ -12,16 +12,10 @@ export class BikesComponent implements OnInit {
 
   bikes: Bike[];
 
-  selectedBike: Bike;
-
   constructor(private bikeService: BikeService) { }
 
   getBikes(): void {
     this.bikeService.getBikes().subscribe(bikes => this.bikes = bikes);
-  }
-
-  onSelect(bike: Bike): void {
-    this.selectedBike = bike;
   }
 
   ngOnInit() {
