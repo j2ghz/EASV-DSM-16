@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Bike } from '../bike';
 
 @Component({
   selector: 'app-bikes',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BikesComponent implements OnInit {
 
-  bike = 'generic';
+  bike: Bike = {
+    id: 1,
+    name: 'Generic'
+  };
 
   constructor() { }
 
