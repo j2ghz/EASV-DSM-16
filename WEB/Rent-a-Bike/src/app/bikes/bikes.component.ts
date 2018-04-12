@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BikesComponent implements OnInit {
 
+  bike = 'generic';
+
   constructor() { }
 
   ngOnInit() {
