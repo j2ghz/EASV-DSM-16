@@ -1,6 +1,9 @@
 <h2>My Bikes</h2>
 <ul class="bikes">
-  <li *ngFor="let bike of bikes">
+  <li *ngFor="let bike of bikes"
+    [class.selected]="bike === selectedBike"
+    (click)="onSelect(bike)">
     <span class="badge">{{bike.id}}</span> {{bike.name}}
   </li>
 </ul>
+<app-bike-detail [bike]="selectedBike"></app-bike-detail>

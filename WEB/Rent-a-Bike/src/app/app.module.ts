@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BikesComponent } from './bikes/bikes.component';
 import { BikeListComponent } from './bikes/bike-list/bike-list.component';
 import { BikeRowComponent } from './bikes/bike-list/bike-row/bike-row.component';
+import { BikeDetailComponent } from './bikes/bike-detail/bike-detail.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { BikeRowComponent } from './bikes/bike-list/bike-row/bike-row.component'
     AppComponent,
     BikesComponent,
     BikeListComponent,
-    BikeRowComponent
+    BikeRowComponent,
+    BikeDetailComponent
   ],
   imports: [
     BrowserModule,
