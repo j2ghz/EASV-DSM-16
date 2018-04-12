@@ -11,6 +11,7 @@ import { BikeDetailComponent } from './bikes/bike-detail/bike-detail.component';
 import { BikeService } from './bikes/bike.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './messages/message.service';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MessageService } from './messages/message.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
     BikeService,
