@@ -3,7 +3,7 @@ import { Bike } from '../../bike';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { BikeService }  from '../bike.service';
+import { BikeService } from '../bike.service';
 
 @Component({
   selector: 'app-bike-detail',
@@ -13,7 +13,7 @@ import { BikeService }  from '../bike.service';
 export class BikeDetailComponent implements OnInit {
 
   getBike(): void {
-    const id =+ this.route.snapshot.paramMap.get('id');
+    const id = + this.route.snapshot.paramMap.get('id');
     this.bikeService.getBike(id).subscribe(bike => this.bike = bike);
   }
   @Input() bike: Bike;
@@ -22,7 +22,12 @@ export class BikeDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private bikeService: BikeService,
     private location: Location
-  ) {}
+  ) { }
+
+  save(): void {
+    this.bikeService.updateBike(this.bike)
+      .subscribe(() => this.goBack());
+  }
 
   goBack(): void {
     this.location.back();

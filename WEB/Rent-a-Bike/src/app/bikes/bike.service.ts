@@ -6,6 +6,10 @@ import { MessageService } from '../messages/message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable()
 export class BikeService {
   private bikesUrl = 'api/heroes';  // URL to web api
@@ -25,6 +29,14 @@ export class BikeService {
     return this.http.get<Bike>(url).pipe(
       tap(_ => this.log(`fetched bike id=${id}`)),
       catchError(this.handleError<Bike>(`getBike id=${id}`))
+    );
+  }
+
+  /** PUT: update the hero on the server */
+  updateBike(bike: Bike): Observable<any> {
+    return this.http.put(this.bikesUrl, bike, httpOptions).pipe(
+      tap(_ => this.log(`updated bike id=${bike.id}`)),
+      catchError(this.handleError<any>('updateBike'))
     );
   }
 
