@@ -22,4 +22,18 @@ export class BikesComponent implements OnInit {
     this.getBikes();
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.bikeService.addBike({ name } as Bike)
+      .subscribe(bike => {
+        this.bikes.push(bike);
+      });
+  }
+
+  delete(bike: Bike): void {
+    this.bikes = this.bikes.filter(h => h !== bike);
+    this.bikeService.deleteBike(bike).subscribe();
+  }
+
 }

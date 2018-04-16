@@ -40,6 +40,25 @@ export class BikeService {
     );
   }
 
+  /** POST: add a new hero to the server */
+addBike (bike: Bike): Observable<Bike> {
+  return this.http.post<Bike>(this.bikesUrl, bike, httpOptions).pipe(
+    tap((bikeA: Bike) => this.log(`added bike w/ id=${bikeA.id}`)),
+    catchError(this.handleError<Bike>('addHero'))
+  );
+}
+
+/** DELETE: delete the hero from the server */
+deleteBike (bike: Bike | number): Observable<Bike> {
+  const id = typeof bike === 'number' ? bike : bike.id;
+  const url = `${this.bikesUrl}/${id}`;
+
+  return this.http.delete<Bike>(url, httpOptions).pipe(
+    tap(_ => this.log(`deleted bike id=${id}`)),
+    catchError(this.handleError<Bike>('deleteBike'))
+  );
+}
+
   /**
  * Handle Http operation that failed.
  * Let the app continue.
