@@ -16,6 +16,7 @@ import { MessageService } from './messages/message.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { BikeSearchComponent } from './bikes/bike-search/bike-search.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { InMemoryDataService }  from './in-memory-data.service';
     BikeRowComponent,
     BikeDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    BikeSearchComponent
   ],
   imports: [
     BrowserModule,

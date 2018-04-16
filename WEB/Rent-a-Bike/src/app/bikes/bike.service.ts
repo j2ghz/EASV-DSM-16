@@ -59,6 +59,18 @@ deleteBike (bike: Bike | number): Observable<Bike> {
   );
 }
 
+/* GET bikes whose name contains search term */
+searchBikes(term: string): Observable<Bike[]> {
+  if (!term.trim()) {
+    // if not search term, return empty hero array.
+    return of([]);
+  }
+  return this.http.get<Bike[]>(this.bikesUrl + `/?name=${term}`).pipe(
+    tap(_ => this.log(`found bikes matching "${term}"`)),
+    catchError(this.handleError<Bike[]>('searchBikes', []))
+  );
+}
+
   /**
  * Handle Http operation that failed.
  * Let the app continue.
