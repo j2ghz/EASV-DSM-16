@@ -12,7 +12,7 @@ const httpOptions = {
 
 @Injectable()
 export class BikeService {
-  private bikesUrl = 'api/heroes';  // URL to web api
+  private bikesUrl = 'api/bikes';  // URL to web api
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
@@ -20,7 +20,7 @@ export class BikeService {
     return this.http.get<Bike[]>(this.bikesUrl)
       .pipe(
         tap(bikes => this.log('fetched bikes')),
-        catchError(this.handleError('getHeroes', []))
+        catchError(this.handleError('getBikes', []))
       );
   }
 
@@ -41,35 +41,35 @@ export class BikeService {
   }
 
   /** POST: add a new hero to the server */
-addBike (bike: Bike): Observable<Bike> {
-  return this.http.post<Bike>(this.bikesUrl, bike, httpOptions).pipe(
-    tap((bikeA: Bike) => this.log(`added bike w/ id=${bikeA.id}`)),
-    catchError(this.handleError<Bike>('addHero'))
-  );
-}
-
-/** DELETE: delete the hero from the server */
-deleteBike (bike: Bike | number): Observable<Bike> {
-  const id = typeof bike === 'number' ? bike : bike.id;
-  const url = `${this.bikesUrl}/${id}`;
-
-  return this.http.delete<Bike>(url, httpOptions).pipe(
-    tap(_ => this.log(`deleted bike id=${id}`)),
-    catchError(this.handleError<Bike>('deleteBike'))
-  );
-}
-
-/* GET bikes whose name contains search term */
-searchBikes(term: string): Observable<Bike[]> {
-  if (!term.trim()) {
-    // if not search term, return empty hero array.
-    return of([]);
+  addBike(bike: Bike): Observable<Bike> {
+    return this.http.post<Bike>(this.bikesUrl, bike, httpOptions).pipe(
+      tap((bikeA: Bike) => this.log(`added bike w/ id=${bikeA.id}`)),
+      catchError(this.handleError<Bike>('addBike'))
+    );
   }
-  return this.http.get<Bike[]>(this.bikesUrl + `/?name=${term}`).pipe(
-    tap(_ => this.log(`found bikes matching "${term}"`)),
-    catchError(this.handleError<Bike[]>('searchBikes', []))
-  );
-}
+
+  /** DELETE: delete the hero from the server */
+  deleteBike(bike: Bike | number): Observable<Bike> {
+    const id = typeof bike === 'number' ? bike : bike.id;
+    const url = `${this.bikesUrl}/${id}`;
+
+    return this.http.delete<Bike>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted bike id=${id}`)),
+      catchError(this.handleError<Bike>('deleteBike'))
+    );
+  }
+
+  /* GET bikes whose name contains search term */
+  searchBikes(term: string): Observable<Bike[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Bike[]>(this.bikesUrl + `/?name=${term}`).pipe(
+      tap(_ => this.log(`found bikes matching "${term}"`)),
+      catchError(this.handleError<Bike[]>('searchBikes', []))
+    );
+  }
 
   /**
  * Handle Http operation that failed.
