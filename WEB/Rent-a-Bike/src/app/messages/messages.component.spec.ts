@@ -30,4 +30,9 @@ describe('MessagesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display first message', () => {
+    let element: HTMLElement = fixture.nativeElement
+    expect(element.textContent).toContain(messageServiceStub.messages[0])
+  })
 });
