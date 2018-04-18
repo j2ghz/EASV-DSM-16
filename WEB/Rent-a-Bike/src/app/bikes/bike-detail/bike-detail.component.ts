@@ -11,12 +11,12 @@ import { BikeService } from '../bike.service';
   styleUrls: ['./bike-detail.component.css']
 })
 export class BikeDetailComponent implements OnInit {
+  @Input() bike: Bike;
 
   getBike(): void {
     const id = + this.route.snapshot.paramMap.get('id');
     this.bikeService.getBike(id).subscribe(bike => this.bike = bike);
   }
-  @Input() bike: Bike;
 
   constructor(
     private route: ActivatedRoute,
