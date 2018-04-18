@@ -11,11 +11,12 @@ describe('BikeSearchComponent', () => {
   let component: BikeSearchComponent;
   let fixture: ComponentFixture<BikeSearchComponent>;
   let bikeServiceStub: Partial<BikeService>;
+  let bikes: Bike[] = [{ id: 0, name: "Test" }];
 
   beforeEach(async(() => {
     bikeServiceStub = {
       searchBikes: (term: string) => {
-        return of([{ id: 0, name: "Test" }])
+        return of(bikes)
       }
     }
 
@@ -40,4 +41,15 @@ describe('BikeSearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return a test bike', () => {
+    let element: HTMLElement = fixture.nativeElement
+    const hostElement = fixture.nativeElement;
+    const nameInput: HTMLInputElement = hostElement.querySelector('input');
+    nameInput.value = 'T';
+    nameInput.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+    expect(element.textContent).toContain(bikes[0].name)
+
+  })
 });
