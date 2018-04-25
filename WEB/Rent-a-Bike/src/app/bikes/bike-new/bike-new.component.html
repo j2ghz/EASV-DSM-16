@@ -1,0 +1,12 @@
+<h2>Hero Detail</h2>
+<h3>
+  <i>FormControl in a FormGroup</i>
+</h3>
+<form [formGroup]="bikeFrom">
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name">
+    </label>
+  </div>
+  <p>Form value: {{ bikeFrom.value | json }}</p>
+</form>

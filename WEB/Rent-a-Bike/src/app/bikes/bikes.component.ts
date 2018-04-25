@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Bike } from '../bike';
+import { Bike } from '../model';
 import { BikeService } from './bike.service';
 import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 

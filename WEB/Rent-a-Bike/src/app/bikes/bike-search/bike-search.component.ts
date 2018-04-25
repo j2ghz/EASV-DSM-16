@@ -8,7 +8,7 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
 
-import { Bike } from '../../bike';
+import { Bike } from '../../model';
 import { BikeService } from '../bike.service';
 
 @Component({

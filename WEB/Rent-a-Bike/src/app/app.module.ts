@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InMemoryDataService } from './in-memory-data.service';
 import { BikeSearchComponent } from './bikes/bike-search/bike-search.component';
+import { BikeNewComponent } from './bikes/bike-new/bike-new.component';
 
 
 @NgModule({
@@ -24,12 +26,14 @@ import { BikeSearchComponent } from './bikes/bike-search/bike-search.component';
     BikeDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    BikeSearchComponent
+    BikeSearchComponent,
+    BikeNewComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.

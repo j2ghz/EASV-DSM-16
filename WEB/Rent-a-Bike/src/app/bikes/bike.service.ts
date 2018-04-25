@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Bike } from '../bike';
+import { Bike } from '../model';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { MessageService } from '../messages/message.service';
@@ -41,35 +41,35 @@ export class BikeService {
   }
 
   /** POST: add a new hero to the server */
-addBike (bike: Bike): Observable<Bike> {
-  return this.http.post<Bike>(this.bikesUrl, bike, httpOptions).pipe(
-    tap((bikeA: Bike) => this.log(`added bike w/ id=${bikeA.id}`)),
-    catchError(this.handleError<Bike>('addHero'))
-  );
-}
-
-/** DELETE: delete the hero from the server */
-deleteBike (bike: Bike | number): Observable<Bike> {
-  const id = typeof bike === 'number' ? bike : bike.id;
-  const url = `${this.bikesUrl}/${id}`;
-
-  return this.http.delete<Bike>(url, httpOptions).pipe(
-    tap(_ => this.log(`deleted bike id=${id}`)),
-    catchError(this.handleError<Bike>('deleteBike'))
-  );
-}
-
-/* GET bikes whose name contains search term */
-searchBikes(term: string): Observable<Bike[]> {
-  if (!term.trim()) {
-    // if not search term, return empty hero array.
-    return of([]);
+  addBike(bike: Bike): Observable<Bike> {
+    return this.http.post<Bike>(this.bikesUrl, bike, httpOptions).pipe(
+      tap((bikeA: Bike) => this.log(`added bike w/ id=${bikeA.id}`)),
+      catchError(this.handleError<Bike>('addHero'))
+    );
   }
-  return this.http.get<Bike[]>(this.bikesUrl + `/?name=${term}`).pipe(
-    tap(_ => this.log(`found bikes matching "${term}"`)),
-    catchError(this.handleError<Bike[]>('searchBikes', []))
-  );
-}
+
+  /** DELETE: delete the hero from the server */
+  deleteBike(bike: Bike | number): Observable<Bike> {
+    const id = typeof bike === 'number' ? bike : bike.id;
+    const url = `${this.bikesUrl}/${id}`;
+
+    return this.http.delete<Bike>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted bike id=${id}`)),
+      catchError(this.handleError<Bike>('deleteBike'))
+    );
+  }
+
+  /* GET bikes whose name contains search term */
+  searchBikes(term: string): Observable<Bike[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Bike[]>(this.bikesUrl + `/?name=${term}`).pipe(
+      tap(_ => this.log(`found bikes matching "${term}"`)),
+      catchError(this.handleError<Bike[]>('searchBikes', []))
+    );
+  }
 
   /**
  * Handle Http operation that failed.
