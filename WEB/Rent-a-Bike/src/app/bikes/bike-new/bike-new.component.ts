@@ -19,7 +19,11 @@ export class BikeNewComponent implements OnInit {
 
   createForm() {
     this.bikeForm = this.fb.group({
-      name: ['', Validators.required], // <--- the FormControl called "name"
+      name: ['', Validators.required],
+      notes: '',
+      modelName: '',
+      modelSize: '',
+      status: ''
     });
   }
 

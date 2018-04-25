@@ -3,6 +3,7 @@ export class Bike {
     name: string;
     notes: string;
     model: BikeModel;
+    status: string;
 }
 
 export class BikeModel {
