@@ -6,6 +6,7 @@ export class Bike {
 }
 
 export class BikeModel {
+    id: number;
     size: string;
     name: string;
 }
