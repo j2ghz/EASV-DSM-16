@@ -21,8 +21,10 @@ export class BikeNewComponent implements OnInit {
     this.bikeForm = this.fb.group({
       name: ['', Validators.required],
       notes: '',
-      modelName: '',
-      modelSize: '',
+      bikeModel: this.fb.group({
+        modelName: '',
+        modelSize: ''
+      }),
       status: ''
     });
   }
