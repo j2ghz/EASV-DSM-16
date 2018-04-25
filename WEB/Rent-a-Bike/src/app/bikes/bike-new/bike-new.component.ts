@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class BikeNewComponent implements OnInit {
 
-  bikeFrom: FormGroup;
+  bikeForm: FormGroup;
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
@@ -18,8 +18,8 @@ export class BikeNewComponent implements OnInit {
   }
 
   createForm() {
-    this.bikeFrom = this.fb.group({
-      name: '', // <--- the FormControl called "name"
+    this.bikeForm = this.fb.group({
+      name: ['', Validators.required], // <--- the FormControl called "name"
     });
   }
 
