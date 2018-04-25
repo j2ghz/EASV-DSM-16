@@ -12,7 +12,7 @@ const httpOptions = {
 
 @Injectable()
 export class BikeService {
-  private bikesUrl = 'api/heroes';  // URL to web api
+  private bikesUrl = 'api/bikes';  // URL to web api
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
@@ -20,7 +20,7 @@ export class BikeService {
     return this.http.get<Bike[]>(this.bikesUrl)
       .pipe(
         tap(bikes => this.log('fetched bikes')),
-        catchError(this.handleError('getHeroes', []))
+        catchError(this.handleError('getBikes', []))
       );
   }
 

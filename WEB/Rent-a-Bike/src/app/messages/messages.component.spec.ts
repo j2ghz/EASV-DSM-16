@@ -1,16 +1,24 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MessagesComponent } from './messages.component';
+import { MessageService } from './message.service';
 
 describe('MessagesComponent', () => {
   let component: MessagesComponent;
   let fixture: ComponentFixture<MessagesComponent>;
+  let messageServiceStub: Partial<MessageService>;
+
 
   beforeEach(async(() => {
+    messageServiceStub = {
+      messages: ["[DateTime] SomeService: SomeMessage"]
+    }
+
     TestBed.configureTestingModule({
-      declarations: [ MessagesComponent ]
+      declarations: [MessagesComponent],
+      providers: [{ provide: MessageService, useValue: messageServiceStub }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +30,9 @@ describe('MessagesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display first message', () => {
+    let element: HTMLElement = fixture.nativeElement
+    expect(element.textContent).toContain(messageServiceStub.messages[0])
+  })
 });
