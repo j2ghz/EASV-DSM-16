@@ -17,6 +17,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { InMemoryDataService } from './in-memory-data.service';
 import { BikeSearchComponent } from './bikes/bike-search/bike-search.component';
 import { BikeNewComponent } from './bikes/bike-new/bike-new.component';
+import { AuthService } from './auth/auth.service';
+import { LoggedInGuard } from './auth/logged-in.guard';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { BikeNewComponent } from './bikes/bike-new/bike-new.component';
   ],
   providers: [
     BikeService,
-    MessageService
+    MessageService,
+    AuthService,
+    LoggedInGuard
   ],
   bootstrap: [AppComponent]
 })
