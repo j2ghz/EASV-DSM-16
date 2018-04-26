@@ -1,0 +1,3 @@
+<span *ngIf="loggedIn">Welcome {{currentUser}}!</span>
+<a *ngIf="loggedIn" routerLink="/auth/logout">Logout</a>
+<a *ngIf="!loggedIn" routerLink="/auth/login">Login</a>

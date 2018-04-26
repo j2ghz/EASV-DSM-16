@@ -19,6 +19,7 @@ import { BikeSearchComponent } from './bikes/bike-search/bike-search.component';
 import { BikeNewComponent } from './bikes/bike-new/bike-new.component';
 import { AuthService } from './auth/auth.service';
 import { LoggedInGuard } from './auth/logged-in.guard';
+import { LoginStatusComponent } from './auth/login-status/login-status.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { LoggedInGuard } from './auth/logged-in.guard';
     MessagesComponent,
     DashboardComponent,
     BikeSearchComponent,
-    BikeNewComponent
+    BikeNewComponent,
+    LoginStatusComponent
   ],
   imports: [
     BrowserModule,
