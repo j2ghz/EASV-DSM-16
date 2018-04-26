@@ -13,7 +13,7 @@ describe('BikeService', () => {
     expect(service).toBeTruthy();
   }));
 
-  it('should return a list of bikes', async(inject( [BikeService], ( bikeService ) => {
+  it('should return a list of bikes', async(inject([BikeService], (bikeService: BikeService) => {
     bikeService.getBikes().subscribe(result => expect(result.length).toBeGreaterThan(0));
   })));
 });

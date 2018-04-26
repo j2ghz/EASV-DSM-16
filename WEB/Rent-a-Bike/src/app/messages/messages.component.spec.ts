@@ -11,8 +11,8 @@ describe('MessagesComponent', () => {
 
   beforeEach(async(() => {
     messageServiceStub = {
-      messages: ["[DateTime] SomeService: SomeMessage"]
-    }
+      messages: ['[DateTime] SomeService: SomeMessage']
+    };
 
     TestBed.configureTestingModule({
       declarations: [MessagesComponent],
@@ -32,7 +32,7 @@ describe('MessagesComponent', () => {
   });
 
   it('should display first message', () => {
-    let element: HTMLElement = fixture.nativeElement
-    expect(element.textContent).toContain(messageServiceStub.messages[0])
-  })
+    const element: HTMLElement = fixture.nativeElement;
+    expect(element.textContent).toContain(messageServiceStub.messages[0]);
+  });
 });

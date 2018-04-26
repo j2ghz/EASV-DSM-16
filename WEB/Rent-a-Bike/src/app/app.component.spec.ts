@@ -7,13 +7,17 @@ import { Component } from '@angular/core';
 describe('AppComponent', () => {
   beforeEach(async(() => {
 
-    @Component({selector: 'app-messages', template: ''})
-    class MessagesStubComponent {}
+    @Component({ selector: 'app-messages', template: '' })
+    class MessagesStubComponent { }
+
+    @Component({ selector: 'app-login-status', template: '' })
+    class LoginStatusStubComponent { }
 
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        MessagesStubComponent
+        MessagesStubComponent,
+        LoginStatusStubComponent
       ],
       imports: [
         RouterTestingModule
